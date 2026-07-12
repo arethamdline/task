@@ -1,9 +1,21 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+
 function App() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold">Vite + React + shadcn/ui</h1>
-      <p className="mt-4 text-lg text-muted-foreground">Edit src/App.tsx to get started.</p>
-    </div>
+    <BrowserRouter>
+      <nav className="border-b">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 className="text-xl font-bold">TaskFlow</h1>
+          <div className="space-x-4">
+            <Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link>
+          </div>
+        </div>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
